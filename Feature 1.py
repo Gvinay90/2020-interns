@@ -1,5 +1,4 @@
 import json
-import matplotlib.pyplot as plt
 import requests
 
 start_date = input('Enter start date format yyyy-mm-dd ex- 2019-01-01\n')
@@ -23,12 +22,10 @@ dates=[]
 price_INR = []
 price_GBP = []
 
-x_coord=0 #for x-axis distance
 for i in data['rates']:
     dates.append(i)
     price_INR.append(data['rates'][i]['INR'])
     price_GBP.append(data['rates'][i]['GBP'])
-    x_coord += 1
         
 map_data=list(zip(dates,price_INR,price_GBP))
 result = sorted(map_data, key = lambda x: x[0])
